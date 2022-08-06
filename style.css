@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #140e3c;
+    color: #ffff;
+}
+
+header {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header svg {
+    max-height: 300px;
+}
+
+h1 {
+    margin: 32px 0 0;
+}
+
+header p {
+    font-size: 25px;
+}
+
+section.house {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+}
+
+section.house svg:hover g#scene {
+    opacity: 0.25;
+}
