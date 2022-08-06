@@ -65,3 +65,33 @@ tvTimeline
 .to(tvLight, {opacity: o})
 .to(tvLight, {opacity: 0.5, duration: .4, delay: .5 })
 .to(tvLight, {opacity: o})
+    
+
+// Lorsque je hover dessus, je prends l'attribut des liens de svg
+
+const label = document.querySelector('div.label');
+const links = document.querySelectorAll('svg a');
+
+links.forEach(link => {
+
+    link.addEventListener('mouseenter', function(){
+        label.classList.add('is-visible')
+        label.innerHTML = link.getAttribute('data-label');
+        gsap.to(links, {opacity: .25})
+        gsap.to(link, {opacity: 1})
+    })
+
+    link.addEventListener('mouseleave', function(){
+        label.classList.remove('is-visible')
+        label.innerHTML = 'Leaved';
+        gsap.to(links, {opacity: 1})
+    })
+})
+
+
+// SUR le mouvement de la souris le positionnement du label changera en pixel
+
+document.addEventListener('mousemove', function(event) {
+    label.style.left = `${event.clientX}px`;
+    label.style.top = `${event.clientY}px`;
+})
