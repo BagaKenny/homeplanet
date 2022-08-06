@@ -17,6 +17,9 @@ const rightTimeline = gsap.timeline({
     repeat: -1,
 })
 
+const tvTimeline = gsap.timeline({
+    repeat: -1
+})
 
 // Selectionner les ID
 // Yeux
@@ -28,6 +31,10 @@ const hat = document.querySelector('g#hat')
 
 const leftArm = document.querySelector('g#left-arm')
 const rightArm = document.querySelector('g#right-arm')
+
+// TvLight
+
+const tvLight = document.querySelector('g#tv-light')
 // Animer avec Timeline
 
 eyesTimeline
@@ -49,3 +56,12 @@ rightTimeline
 .set(rightArm, {rotation: 0})
 .to(rightArm, {rotate: -20, duration: 1, delay: 1})
 .to(rightArm, {rotation: 0})
+
+let o = .25
+
+tvTimeline
+.set(tvLight, {opacity: o})
+.to(tvLight, {opacity: 1, duration: 1, delay: .5})
+.to(tvLight, {opacity: o})
+.to(tvLight, {opacity: 0.5, duration: .4, delay: .5 })
+.to(tvLight, {opacity: o})

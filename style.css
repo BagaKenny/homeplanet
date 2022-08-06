@@ -38,6 +38,20 @@ section.house {
     min-height: 100vh;
 }
 
+section.house svg g#scene {
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+/* Hover On Scene */
 section.house svg:hover g#scene {
     opacity: 0.25;
+}
+
+.media-page {
+    font-size: 40px;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
