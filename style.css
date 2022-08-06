@@ -3,10 +3,22 @@
     padding: 0;
 }
 
+@keyframes fadein {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+main {
+    animation: fadein 1s 1s both ;
+}
+
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #405593;
     color: #ffff;
+
+    /* Définit pour le scroll */
+    height: 8000px;
 }
 
 header, section {
@@ -24,6 +36,8 @@ header {
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
+
+    padding: 32px;
 }
 header nav {
     position: absolute;
@@ -39,26 +53,15 @@ header nav ul {
     height: 100%;
 }
 
-nav ul li {
-    margin: .5rem 2rem;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-   
-}
-
 header svg {
     max-height: 300px;
 }
 
 h1 {
-    margin: 32px 0 0;
-}
-
-section.scene {
-
+    max-width: 80%;
+    word-wrap: break-word;
+    margin: 32px 0 0 0;
+    text-align: center;
 }
 
 section.scene img {
@@ -117,7 +120,25 @@ div.label.is-visible {
     opacity: 1;
 }
 
-li.credit {
+p.credit {
+    margin-top: 10vh;
     font-size: 1rem;
     font-style: italic;
+}
+
+@media screen and (max-width: 420px) {
+    header h1,
+    header p,
+    header svg {
+        margin-right: 10vw;
+    }
+
+
+    section.house {
+        min-height: 100vh;
+    }
+
+    section.house svg {
+       max-width: 120%;
+    }
 }
